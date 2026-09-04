@@ -35,7 +35,7 @@ touches a plaintext file.
    - **Fine-grained token** (recommended, 2024+ default)
    - **Classic token** (fallback if your tooling requires it)
 5. For a fine-grained token:
-   - **Resource owner**: only the repo (`hainei0318/tool-station`)
+   - **Resource owner**: only the repo (`haine2024/auto-money-agent`)
    - **Repository access**: "All repositories" or just this one
    - **Permissions → Repository**: ✅ `Contents: Read and write`
    - **Permissions → Actions**: ❌ Leave (not needed for pushing)
@@ -51,7 +51,7 @@ You'll never type the PAT again after the first push, because:
    `scripts/setup_github_auth.bat` on Windows).
 2. It asks for your username + repo name; configures the credential
    helper; **git push** then prompts:
-   - Username: `hainei0318`
+   - Username: `haine2024`
    - Password: `<paste token here; nothing appears on screen>`
 3. The PAT is encrypted into Windows Credential Manager (or your
    OS equivalent).

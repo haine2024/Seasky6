@@ -22,8 +22,8 @@ echo "Step 3 — push once; you'll be prompted for username + PAT"
 echo
 
 # Step 1: HTTPS remote
-read -p "GitHub username (e.g. hainei0318): " GH_USER
-read -p "Repo name on GitHub (e.g. tool-station): " REPO
+read -p "GitHub username (e.g. haine2024): " GH_USER
+read -p "Repo name on GitHub (e.g. auto-money-agent): " REPO
 
 REPO_URL="https://github.com/${GH_USER}/${REPO}.git"
 echo

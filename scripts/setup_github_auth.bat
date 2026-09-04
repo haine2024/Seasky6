@@ -14,11 +14,11 @@ echo We'll configure git so your PAT is remembered by Windows.
 echo Credential Manager stores it encrypted; we never write it to disk.
 echo.
 
-set /p GH_USER="GitHub username (e.g. hainei0318): "
-set /p REPO="Repo name on GitHub (e.g. tool-station): "
+set /p GH_USER="GitHub username (e.g. haine2024): "
+set /p REPO="Repo name on GitHub (e.g. auto-money-agent): "
 
-if "%GH_USER%"=="" set GH_USER=hainei0318
-if "%REPO%"=="" set REPO=tool-station
+if "%GH_USER%"=="" set GH_USER=haine2024
+if "%REPO%"=="" set REPO=auto-money-agent
 
 set REPO_URL=https://github.com/%GH_USER%/%REPO%.git
 

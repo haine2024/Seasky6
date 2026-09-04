@@ -24,8 +24,8 @@ if [ -z "$(git config --global user.email)" ]; then
 fi
 
 # ---- 3. Repo target ----
-read -p "GitHub username (e.g. hainei0318): " GH_USER
-read -p "Repo name on GitHub (e.g. tool-station): " REPO
+read -p "GitHub username (e.g. haine2024): " GH_USER
+read -p "Repo name on GitHub (e.g. auto-money-agent): " REPO
 
 REPO_URL="git@github.com:${GH_USER}/${REPO}.git"
 

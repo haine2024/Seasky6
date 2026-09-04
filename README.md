@@ -60,10 +60,10 @@ python serve.py 8765       # 本地预览（http://127.0.0.1:8765）
 ## 5 分钟上 GitHub
 
 ```bash
-git remote add origin git@github.com:YOUR_NAME/tool-station.git
+git remote add origin git@github.com:haine2024/auto-money-agent.git
 git push -u origin main
 # GitHub → Settings → Pages → Source: GitHub Actions
-# 等 60 秒 → https://YOUR_NAME.github.io/tool-station/
+# 等 60 秒 → https://haine2024.github.io/auto-money-agent/
 ```
 
 详细三条路线见下面"怎么从 Demo 跑到真站"。
@@ -122,7 +122,7 @@ git push -u origin main
 ## AdSense 提交流程（不需要科技含量）
 
 1. 准备一个 gmail，登录 https://www.google.com/adsense
-2. 填网址（比如 `https://YOUR_NAME.github.io/tool-station/`）
+2. 填网址（比如 `https://haine2024.github.io/auto-money-agent/`）
 3. 选账户类型（个人）
 4. 等待审核（一般 1-3 天首次）
 
