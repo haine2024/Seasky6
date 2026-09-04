@@ -57,6 +57,17 @@ python serve.py 8765       # 本地预览（http://127.0.0.1:8765）
 | 监控数据 | `reports/metrics.csv` |
 | 监控仪表盘 | `dashboard/index.html` |
 
+## 5 分钟上 GitHub
+
+```bash
+git remote add origin git@github.com:YOUR_NAME/tool-station.git
+git push -u origin main
+# GitHub → Settings → Pages → Source: GitHub Actions
+# 等 60 秒 → https://YOUR_NAME.github.io/tool-station/
+```
+
+详细三条路线见下面"怎么从 Demo 跑到真站"。
+
 ## Demo 结果（本次跑出的数字）
 
 - 工具数：3
@@ -66,21 +77,47 @@ python serve.py 8765       # 本地预览（http://127.0.0.1:8765）
 
 > 真实流量 1-3 个月内是谷歌沙盒期，会远低于这个数字，但所生成的结构、SEO、合规页、sitemap 都和真站没区别。
 
-## 怎么从 Demo 跑到真站（10 分钟）
+## 怎么从 Demo 跑到真站（3 条路）
+
+### 路线 A：完全自动（GitHub Actions）— 推荐
+push 一次，自动跑流水线 + 自动部署 Pages。
+
+**前置**：在 GitHub 网页端创建一个空仓库（不要勾 README / .gitignore / License，我们都已经有了），
+比如叫 `tool-station`。然后在本地：
 
 ```bash
-cd tools_output
-git init
-git add .
-git commit -m "tool station seed"
-# 1. 在 github 建一个 repo（比如 tool-station）
-git remote add origin git@github.com:YOUR_NAME/tool-station.git
+cd auto-money-agent
+# 第一次推：先把仓库在 GitHub 网页上建好（空仓库）
+git remote add origin git@github.com:YOUR_NAME/tool-station.git   # SSH
+#  或 HTTPS: https://github.com/YOUR_NAME/tool-station.git
 git push -u origin main
-# 2. 仓库 Settings → Pages → Source: main / root
-# 3. 60 秒后访问 https://YOUR_NAME.github.io/tool-station/
 ```
 
-> 也可以直接拖到 Cloudflare Pages / Netlify / Vercel，都是零配置。
+接下来：
+1. 打开 `https://github.com/YOUR_NAME/tool-station/settings/pages`
+2. **Source** 选 **GitHub Actions**
+3. 等 60-90 秒，访问 `https://YOUR_NAME.github.io/tool-station/`
+
+> ✅ 以后每次 push，pipeline 会重新跑，再自动 deploy。可以加新 spec → push → 自动上线。
+
+### 路线 B：直接放静态（不跑 CI，最快）
+如果你想让 Pages 直接吃 `tools_output/`，不开 CI：
+
+1. push 仓库（步骤同 A）
+2. 在 Pages 设置里选 **Branch: main / Folder: /tools_output**
+3. 等 60 秒，访问 `https://YOUR_NAME.github.io/tool-station/`
+
+> 这种方式是"我说啥是啥"，CI 不重跑。每次想换工具，先本地 `python main.py`，再 push。
+
+### 路线 C：Windows 一键（最省事）
+已经写了 `push_to_github.bat`（双击）和 `push_to_github.sh`（Git Bash）。
+按提示输入用户名和仓库名，回车即推。
+
+### 切换到 Cloudflare Pages / Netlify / Vercel
+
+- **Cloudflare Pages**：登录 → Pages → Create → 选 repo → Build command 留空 → Output dir 填 `tools_output`
+- **Netlify**：拖拽 `tools_output/` 到 netlify.com/drop
+- **Vercel**：`vercel --prod` 在仓库根目录
 
 ## AdSense 提交流程（不需要科技含量）
 
