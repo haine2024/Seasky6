@@ -1,0 +1,85 @@
+# ==========================================
+# Auto Money Agent — 工具站自动赚钱智能体
+# ==========================================
+# 基于公众号文章方法论：
+# - 单文件 HTML+JS 工具，零维护
+# - 长尾关键词 + 高 RPM 赛道
+# - AdSense 合规 + 自动变现
+
+agent:
+  name: "Nova Auto Money Agent"
+  version: "0.1.0"
+  default_locale: "en-US"
+  default_currency: "USD"
+  # 站长联系信息（AdSense 必填）
+  site_owner:
+    email: "owner@example.com"
+    name: "Tool Station Operator"
+
+# 阶段 1：选题（细分赛道，可全量开启）
+niches:
+  # 入门级：低门槛、稳定流量
+  - id: "format_converter"
+    name: "Format converter"
+    difficulty: "low"
+    avg_rpm_usd: [2, 5]
+    enabled: true
+  - id: "small_calculator"
+    name: "Small calculator"
+    difficulty: "low"
+    avg_rpm_usd: [3, 10]
+    enabled: true
+  # 进阶级
+  - id: "text_processor"
+    name: "Text processor"
+    difficulty: "mid"
+    avg_rpm_usd: [4, 12]
+    enabled: true
+  - id: "generator"
+    name: "Generator"
+    difficulty: "mid"
+    avg_rpm_usd: [3, 8]
+    enabled: true
+  # 高级：高 RPM
+  - id: "checker_analysis"
+    name: "Checker / analyzer"
+    difficulty: "high"
+    avg_rpm_usd: [10, 40]
+    enabled: true
+
+# 阶段 2：关键词种子词（每赛道 6+ 长尾示例，用于本文 demo）
+keywords_seeds:
+  small_calculator:
+    - "mortgage calculator equal principal vs equal payment"
+    - "tdee calculator activity level"
+    - "vat calculator reverse"
+    - "salary hourly converter"
+    - "compound interest daily calculator"
+    - "loan amortization extra payment"
+  text_processor:
+    - "json formatter validator online"
+    - "case converter sentence case"
+    - "remove duplicate lines online"
+    - "text diff tool online"
+    - "word counter reading time"
+    - "base64 encode decode"
+  generator:
+    - "wifi password generator strong"
+    - "placeholder image generator"
+    - "lorem ipsum generator paragraphs"
+    - "uuid v4 generator bulk"
+    - "random color palette generator"
+    - "favicon generator from text"
+
+# 阶段 3：合规阈值
+adsense:
+  min_pages_required: 3      # 至少 3 个工具页 + 关于 + 隐私
+  require_privacy_policy: true
+  require_about_page: true
+  require_contact_page: true
+  block_high_risk_keywords: ["adult", "gambling", "drugs", "violence"]
+
+# 阶段 4：监控
+monitor:
+  log_dir: "./reports"
+  output_dir: "./tools_output"

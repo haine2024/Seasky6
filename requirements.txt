@@ -1,0 +1,10 @@
+# Auto Money Agent — 工具站自动赚钱智能体
+# 依赖最小化：默认零三方依赖，纯 stdlib 即可跑通。
+# Python: 3.10+
+
+# 配置加载需要 yaml（系统若缺则装一次即可）
+PyYAML>=6.0
+
+# 可选：
+# httpx       # 仅当你想接入真实关键词 API / GSC 时启用
+# python-dotenv  # 仅当你想用 .env 文件管理密钥

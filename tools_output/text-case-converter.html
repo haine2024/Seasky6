@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Text case converter (lower / upper / title / sentence) — Free &amp; Online</title>
+<meta name="description" content="Convert any text to lowercase, UPPERCASE, Title Case, or Sentence case instantly in your browser. No upload, no signup." />
+<meta name="keywords" content="case converter sentence case, online tool, free, no signup" />
+<meta property="og:title" content="Text case converter (lower / upper / title / sentence) — Free &amp; Online" />
+<meta property="og:description" content="Convert any text to lowercase, UPPERCASE, Title Case, or Sentence case instantly in your browser. No upload, no signup." />
+<meta property="og:type" content="website" />
+<link rel="canonical" href="https://tool-station.example.com/text-case-converter.html" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Text case converter (lower / upper / title / sentence)",
+  "description": "Convert any text to lowercase, UPPERCASE, Title Case, or Sentence case instantly in your browser. No upload, no signup.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "url": "https://tool-station.example.com/text-case-converter.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<style>
+  *,*::before,*::after { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background: #f7f7f5; color: #1a1a1a; line-height: 1.6; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 80px; }
+  h1 { font-size: 1.6rem; font-weight: 500; margin: 0 0 12px; color: #111; }
+  h2 { font-size: 1.15rem; font-weight: 500; margin: 24px 0 8px; color: #222; }
+  p { margin: 0 0 12px; font-size: 0.95rem; color: #333; }
+  .card { background: #ffffff; border: 1px solid #e6e4dd; border-radius: 12px; padding: 20px; margin-top: 16px; }
+  .field { display: flex; flex-direction: column; margin-bottom: 12px; }
+  .field label { font-size: 0.85rem; color: #444; margin-bottom: 4px; }
+  .field input, .field select, .field textarea { padding: 10px 12px; border: 1px solid #d8d6cf; border-radius: 8px; font-size: 0.95rem; background: #fff; color: #111; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid #185fa5; outline-offset: 1px; }
+  .actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .btn { padding: 10px 16px; border-radius: 8px; border: 0; cursor: pointer; font-size: 0.95rem; font-weight: 500; background: #185fa5; color: #fff; }
+  .btn.secondary { background: #f0eee6; color: #222; }
+  .result { margin-top: 16px; padding: 16px; background: #fafaf7; border: 1px dashed #d8d6cf; border-radius: 8px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9rem; white-space: pre-wrap; word-break: break-word; min-height: 60px; }
+  footer.site { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e6e4dd; font-size: 0.8rem; color: #666; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+  footer.site a { color: #185fa5; text-decoration: none; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #15140f; color: #e8e6df; }
+    .card { background: #1d1c17; border-color: #2c2a23; }
+    .field input, .field select, .field textarea { background: #15140f; border-color: #2c2a23; color: #e8e6df; }
+    .result { background: #1d1c17; border-color: #2c2a23; }
+    .btn.secondary { background: #2c2a23; color: #e8e6df; }
+    h1 { color: #f0eee6; } h2 { color: #e8e6df; } p { color: #c7c4ba; }
+    footer.site { border-color: #2c2a23; color: #8c897f; }
+  }
+</style>
+</head>
+<body>
+<main>
+<h1>Text case converter (lower / upper / title / sentence)</h1>
+<p class="intro">Convert any text to lowercase, UPPERCASE, Title Case, or Sentence case instantly in your browser. No upload, no signup.</p>
+<div class="card">
+<div class="field"><label for="input">Your text</label><textarea id="input" rows="6" placeholder="Paste text here..."></textarea></div>
+<div class="field"><label for="mode">Convert to</label><input id="mode" type="text" placeholder="" value="title" autocomplete="off" inputmode="decimal" /></div>
+<div class="actions">
+<button class="btn" id="runBtn" type="button">Run</button>
+<button class="btn secondary" id="clearBtn" type="button">Clear</button>
+</div>
+<div class="result" id="result" aria-live="polite">Result will appear here.</div>
+</div>
+<h2>When to use which case</h2>
+<p>Use <strong>Sentence case</strong> for emails and Slack.
+<strong>Title Case</strong> for article headings.
+<strong>UPPER CASE</strong> only for acronyms.</p>
+<p>All processing happens locally in your browser — your text
+never leaves this page.</p>
+
+<footer class="site">
+  <div>© 2026 Tool Station. Built with the auto money agent.</div>
+  <div>
+    <a href="/about.html">About</a> ·
+    <a href="/privacy.html">Privacy</a> ·
+    <a href="/contact.html">Contact</a>
+  </div>
+</footer>
+</main>
+</body>
+</html>
+
+<script>
+(function() {
+  const byId = id => document.getElementById(id);
+  const fmt = (n, d) => Number(n).toLocaleString('en-US', { minimumFractionDigits: d || 2, maximumFractionDigits: d || 2 });
+  function go() {
+    try {
+      
+    const input = byId('input').value;
+    if (!input.length) { throw new Error('Please paste some text first.'); }
+    const mode = byId('mode').value;
+    let out = '';
+    if (mode === 'lower') out = input.toLowerCase();
+    else if (mode === 'upper') out = input.toUpperCase();
+    else if (mode === 'title') out = input.replace(/\w\S*/g, w => w[0].toUpperCase() + w.slice(1).toLowerCase());
+    else if (mode === 'sentence') out = input.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g, c => c.toUpperCase());
+    else if (mode === 'dedupe') {
+      out = Array.from(new Set(input.split(/\r?\n/))).filter(Boolean).join('\n');
+    } else if (mode === 'reverse') out = input.split('').reverse().join('');
+    else out = input;
+    out;
+
+      const out = byId('result');
+      out.textContent = out;
+    } catch (e) {
+      byId('result').textContent = 'Error: ' + e.message;
+    }
+  }
+  byId('runBtn').addEventListener('click', go);
+})();
+</script>

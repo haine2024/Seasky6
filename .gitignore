@@ -1,0 +1,35 @@
+# ----- Python -----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+.venv/
+venv/
+env/
+.env
+.env.local
+
+# ----- IDE -----
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ----- Auto-generated / runtime data -----
+# 跑流水线时本地生成（不要提交，否则仓库臃肿）
+reports/
+dashboard/
+tools_output/*.html.bak
+serve.log
+
+# 模拟数据 / 本地缓存
+metrics.csv
+*.tmp
+.cache/
+
+# ----- Logs -----
+*.log
