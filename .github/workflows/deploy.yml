@@ -38,6 +38,9 @@ jobs:
       - name: Build dashboard
         run: python build_dashboard.py
 
+      - name: Inject AdSense publisher ID
+        run: python inject_adsense.py
+
       # _site 是最终部署到 Pages 的根目录
       # 这里把 tools_output 拍平到 _site 根，dashboard 放 /dashboard/ 子路径
       - name: Build deploy bundle
@@ -49,6 +52,13 @@ jobs:
           touch _site/.nojekyll
           echo "--- bundle contents ---"
           ls -la _site
+          echo "--- AdSense verification ---"
+          if grep -q "ca-pub-1956340995769142" _site/index.html; then
+            echo "✓ AdSense code present in deployed index.html"
+          else
+            echo "✗ AdSense code MISSING - deployment will fail AdSense verification"
+            exit 1
+          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
