@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # ============================================================
-# enable_pages.py — 启用 GitHub Pages（一次性）
+# enable_pages.py — 启用 GitHub Pages（一次性，需要 PAT）
+#
+# 注意：PAT 必须带 `repo` + `pages` 权限，且 Windows Credential
+# Manager 在非交互 shell 下读取会 SIGTERM，因此该脚本**通常会失败**。
+# 推荐改用 MANUAL_FIX.md 里写的 UI 路径（30 秒搞定）。
 #
 # 用法：
 #   python enable_pages.py
