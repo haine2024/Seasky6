@@ -1,0 +1,85 @@
+{
+  "top_niches": [
+    "checker_analysis",
+    "text_processor",
+    "small_calculator"
+  ],
+  "keywords_total": 18,
+  "top_keywords": [
+    {
+      "keyword": "salary hourly converter",
+      "niche_id": "small_calculator",
+      "score": 37.8
+    },
+    {
+      "keyword": "vat calculator reverse",
+      "niche_id": "small_calculator",
+      "score": 27.0
+    },
+    {
+      "keyword": "base64 encode decode",
+      "niche_id": "text_processor",
+      "score": 18.9
+    },
+    {
+      "keyword": "placeholder image generator",
+      "niche_id": "generator",
+      "score": 13.5
+    },
+    {
+      "keyword": "compound interest daily calculator",
+      "niche_id": "small_calculator",
+      "score": 9.24
+    },
+    {
+      "keyword": "loan amortization extra payment",
+      "niche_id": "small_calculator",
+      "score": 9.24
+    }
+  ],
+  "tools_written": [
+    {
+      "slug": "mortgage-equal-payment-vs-principal",
+      "bytes": 7560
+    },
+    {
+      "slug": "text-case-converter",
+      "bytes": 6489
+    },
+    {
+      "slug": "strong-password-generator",
+      "bytes": 6972
+    }
+  ],
+  "seo_avg_score": 12.0,
+  "adsense_ready": true,
+  "deploy_files": [
+    "robots.txt",
+    "sitemap.xml",
+    "deploy.json"
+  ],
+  "monitor_summary": {
+    "by_slug": {
+      "mortgage-equal-payment-vs-principal": {
+        "impressions": 1680,
+        "clicks": 138,
+        "revenue_usd": 12.6
+      },
+      "text-case-converter": {
+        "impressions": 1400,
+        "clicks": 114,
+        "revenue_usd": 10.5
+      },
+      "strong-password-generator": {
+        "impressions": 1295,
+        "clicks": 103,
+        "revenue_usd": 9.7125
+      }
+    },
+    "total_impressions": 4375,
+    "total_clicks": 355,
+    "total_revenue_usd": 32.8125,
+    "ctr_pct": 8.11,
+    "rpm_usd": 7.5
+  }
+}

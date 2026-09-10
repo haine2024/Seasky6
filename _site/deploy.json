@@ -1,0 +1,41 @@
+{
+  "site": "tool-station",
+  "owner": "owner@example.com",
+  "stack": "static",
+  "pages": [
+    {
+      "path": "mortgage-equal-payment-vs-principal.html"
+    },
+    {
+      "path": "text-case-converter.html"
+    },
+    {
+      "path": "strong-password-generator.html"
+    },
+    {
+      "path": "index.html"
+    },
+    {
+      "path": "about.html"
+    },
+    {
+      "path": "privacy.html"
+    },
+    {
+      "path": "contact.html"
+    },
+    {
+      "path": "robots.txt"
+    },
+    {
+      "path": "sitemap.xml"
+    }
+  ],
+  "ready_for": [
+    "github-pages",
+    "cloudflare-pages",
+    "netlify",
+    "vercel"
+  ],
+  "next_step": "git init \u2192 commit \u2192 push \u2192 enable Pages on gh-pages branch"
+}

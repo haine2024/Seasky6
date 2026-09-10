@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tool station dashboard — auto money agent</title>
+<style>
+  :root { color-scheme: light dark; }
+  *,*::before,*::after { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f7f7f5; color: #1a1a1a; line-height: 1.5; }
+  main { max-width: 1000px; margin: 0 auto; padding: 24px 16px 80px; }
+  h1, h2, h3 { font-weight: 500; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  h2 { font-size: 1.1rem; margin: 28px 0 8px; }
+  .muted { color: #5f5e5a; font-size: 0.85rem; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .kpi { background: #fff; border: 1px solid #e6e4dd; border-radius: 12px; padding: 16px; }
+  .kpi .label { font-size: 0.78rem; color: #666; text-transform: uppercase; letter-spacing: 0.04em; }
+  .kpi .value { font-size: 1.5rem; margin-top: 4px; font-weight: 500; }
+  .card { background: #fff; border: 1px solid #e6e4dd; border-radius: 12px; padding: 20px; margin-top: 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #e6e4dd; }
+  th { font-weight: 500; color: #444; background: #fafaf7; }
+  tr:last-child td { border-bottom: none; }
+  .bar { display: flex; align-items: flex-end; height: 160px; gap: 8px; border-bottom: 1px solid #e6e4dd; padding: 0 4px 4px; }
+  .bar .col { flex: 1; background: #185fa5; border-radius: 4px 4px 0 0; min-height: 4px; position: relative; }
+  .bar .col span { position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%); font-size: 0.7rem; color: #666; white-space: nowrap; }
+  .bar-labels { display: flex; gap: 8px; padding: 0 4px; margin-top: 4px; }
+  .bar-labels span { flex: 1; font-size: 0.72rem; color: #888; text-align: center; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 0.78rem; background: #d3eed8; color: #26572d; }
+  .badge.warn { background: #faeeda; color: #633806; }
+  .badge.fail { background: #f7c1c1; color: #791f1f; }
+  ul.tools { list-style: none; padding: 0; margin: 0; }
+  ul.tools li { padding: 8px 0; border-bottom: 1px solid #e6e4dd; display: flex; justify-content: space-between; align-items: center; }
+  ul.tools li:last-child { border-bottom: none; }
+  ul.tools a { color: #185fa5; text-decoration: none; }
+  footer { margin-top: 40px; font-size: 0.8rem; color: #666; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #15140f; color: #e8e6df; }
+    .kpi, .card { background: #1d1c17; border-color: #2c2a23; }
+    th { background: #15140f; color: #c7c4ba; }
+    th, td { border-color: #2c2a23; }
+    ul.tools li { border-color: #2c2a23; }
+  }
+</style>
+</head>
+<body>
+<main>
+<h1>Tool station dashboard</h1>
+<p class="muted">Auto money agent run summary &middot; ready to deploy &middot; simulated weekly metrics</p>
+
+<h2>Top-line KPIs</h2>
+<div class="kpis">
+  <div class="kpi"><div class="label">Tools shipped</div><div class="value">3</div></div>
+  <div class="kpi"><div class="label">SEO avg</div><div class="value">12/12</div></div>
+  <div class="kpi"><div class="label">AdSense ready</div><div class="value">Yes</div></div>
+  <div class="kpi"><div class="label">Weekly impressions</div><div class="value">4,375</div></div>
+  <div class="kpi"><div class="label">Weekly clicks</div><div class="value">355</div></div>
+  <div class="kpi"><div class="label">Weekly revenue</div><div class="value">$32.81</div></div>
+  <div class="kpi"><div class="label">CTR</div><div class="value">8.1%</div></div>
+  <div class="kpi"><div class="label">RPM</div><div class="value">$7.50</div></div>
+</div>
+
+<h2>Daily revenue (simulated last 7 days)</h2>
+<div class="card">
+<div class="bar" id="barChart">
+  <div class="col" style="height: 59px;" title="2026-09-03: $2.66"><span>$2.66</span></div>
+  <div class="col" style="height: 74px;" title="2026-09-04: $3.34"><span>$3.34</span></div>
+  <div class="col" style="height: 89px;" title="2026-09-05: $4.01"><span>$4.01</span></div>
+  <div class="col" style="height: 104px;" title="2026-09-06: $4.69"><span>$4.69</span></div>
+  <div class="col" style="height: 119px;" title="2026-09-07: $5.36"><span>$5.36</span></div>
+  <div class="col" style="height: 135px;" title="2026-09-08: $6.04"><span>$6.04</span></div>
+  <div class="col" style="height: 150px;" title="2026-09-09: $6.71"><span>$6.71</span></div>
+</div>
+<div class="bar-labels">
+  <span>09-03</span>
+  <span>09-04</span>
+  <span>09-05</span>
+  <span>09-06</span>
+  <span>09-07</span>
+  <span>09-08</span>
+  <span>09-09</span>
+</div>
+</div>
+
+<h2>Per-tool performance</h2>
+<div class="card">
+<table>
+  <thead>
+    <tr><th>Tool</th><th>Impressions</th><th>Clicks</th><th>Revenue</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>mortgage-equal-payment-vs-principal</td><td>1,680</td><td>138</td><td>$12.60</td></tr>
+    <tr><td>text-case-converter</td><td>1,400</td><td>114</td><td>$10.50</td></tr>
+    <tr><td>strong-password-generator</td><td>1,295</td><td>103</td><td>$9.71</td></tr>
+
+  </tbody>
+</table>
+</div>
+
+<h2>Tool inventory</h2>
+<div class="card">
+<ul class="tools">
+  <li><a href="/tools_output/mortgage-equal-payment-vs-principal.html" target="_blank">mortgage-equal-payment-vs-principal</a><span class="muted">7,560 bytes</span></li>
+  <li><a href="/tools_output/text-case-converter.html" target="_blank">text-case-converter</a><span class="muted">6,489 bytes</span></li>
+  <li><a href="/tools_output/strong-password-generator.html" target="_blank">strong-password-generator</a><span class="muted">6,972 bytes</span></li>
+
+</ul>
+</div>
+
+<h2>Top 6 keywords by score</h2>
+<div class="card">
+<table>
+  <thead><tr><th>Keyword</th><th>Niche</th><th>Score</th></tr></thead>
+  <tbody>
+    <tr><td>salary hourly converter</td><td>small_calculator</td><td>37.80</td></tr>
+    <tr><td>vat calculator reverse</td><td>small_calculator</td><td>27.00</td></tr>
+    <tr><td>base64 encode decode</td><td>text_processor</td><td>18.90</td></tr>
+    <tr><td>placeholder image generator</td><td>generator</td><td>13.50</td></tr>
+    <tr><td>compound interest daily calculator</td><td>small_calculator</td><td>9.24</td></tr>
+    <tr><td>loan amortization extra payment</td><td>small_calculator</td><td>9.24</td></tr>
+
+  </tbody>
+</table>
+</div>
+
+<h2>Deploy artifacts</h2>
+<div class="card">
+<ul class="tools">
+  <li><a href="/tools_output/index.html" target="_blank">Site home (tools_output/index.html)</a></li>
+  <li><a href="/tools_output/robots.txt" target="_blank">robots.txt</a></li>
+  <li><a href="/tools_output/sitemap.xml" target="_blank">sitemap.xml</a></li>
+  <li><a href="/tools_output/deploy.json" target="_blank">deploy.json</a></li>
+  <li><a href="/tools_output/about.html" target="_blank">about.html</a></li>
+  <li><a href="/tools_output/privacy.html" target="_blank">privacy.html</a></li>
+  <li><a href="/tools_output/contact.html" target="_blank">contact.html</a></li>
+</ul>
+</div>
+
+<footer>Auto Money Agent · demo run · next: wire to a real domain and submit AdSense.</footer>
+</main>
+</body>
+</html>

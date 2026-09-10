@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Equal payment vs equal principal mortgage calculator — Free &amp; Online</title>
+<meta name="description" content="Compare equal payment (annuity) and equal principal mortgage schedules side by side. Free, no signup, mobile friendly." />
+<meta name="keywords" content="mortgage calculator equal principal vs equal payment, online tool, free, no signup" />
+<meta property="og:title" content="Equal payment vs equal principal mortgage calculator — Free &amp; Online" />
+<meta property="og:description" content="Compare equal payment (annuity) and equal principal mortgage schedules side by side. Free, no signup, mobile friendly." />
+<meta property="og:type" content="website" />
+<link rel="canonical" href="https://tool-station.example.com/mortgage-equal-payment-vs-principal.html" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Equal payment vs equal principal mortgage calculator",
+  "description": "Compare equal payment (annuity) and equal principal mortgage schedules side by side. Free, no signup, mobile friendly.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "url": "https://tool-station.example.com/mortgage-equal-payment-vs-principal.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<style>
+  *,*::before,*::after { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background: #f7f7f5; color: #1a1a1a; line-height: 1.6; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 80px; }
+  h1 { font-size: 1.6rem; font-weight: 500; margin: 0 0 12px; color: #111; }
+  h2 { font-size: 1.15rem; font-weight: 500; margin: 24px 0 8px; color: #222; }
+  p { margin: 0 0 12px; font-size: 0.95rem; color: #333; }
+  .card { background: #ffffff; border: 1px solid #e6e4dd; border-radius: 12px; padding: 20px; margin-top: 16px; }
+  .field { display: flex; flex-direction: column; margin-bottom: 12px; }
+  .field label { font-size: 0.85rem; color: #444; margin-bottom: 4px; }
+  .field input, .field select, .field textarea { padding: 10px 12px; border: 1px solid #d8d6cf; border-radius: 8px; font-size: 0.95rem; background: #fff; color: #111; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid #185fa5; outline-offset: 1px; }
+  .actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .btn { padding: 10px 16px; border-radius: 8px; border: 0; cursor: pointer; font-size: 0.95rem; font-weight: 500; background: #185fa5; color: #fff; }
+  .btn.secondary { background: #f0eee6; color: #222; }
+  .result { margin-top: 16px; padding: 16px; background: #fafaf7; border: 1px dashed #d8d6cf; border-radius: 8px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9rem; white-space: pre-wrap; word-break: break-word; min-height: 60px; }
+  footer.site { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e6e4dd; font-size: 0.8rem; color: #666; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+  footer.site a { color: #185fa5; text-decoration: none; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #15140f; color: #e8e6df; }
+    .card { background: #1d1c17; border-color: #2c2a23; }
+    .field input, .field select, .field textarea { background: #15140f; border-color: #2c2a23; color: #e8e6df; }
+    .result { background: #1d1c17; border-color: #2c2a23; }
+    .btn.secondary { background: #2c2a23; color: #e8e6df; }
+    h1 { color: #f0eee6; } h2 { color: #e8e6df; } p { color: #c7c4ba; }
+    footer.site { border-color: #2c2a23; color: #8c897f; }
+  }
+</style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1956340995769142" crossorigin="anonymous"></script>
+  </head>
+<body>
+<main>
+<h1>Equal payment vs equal principal mortgage calculator</h1>
+<p class="intro">Compare equal payment (annuity) and equal principal mortgage schedules side by side. Free, no signup, mobile friendly.</p>
+<div class="card">
+<div class="field"><label for="principal">Loan amount (USD)</label><input id="principal" type="number" placeholder="e.g. 300000" value="300000" autocomplete="off" inputmode="decimal" /></div>
+<div class="field"><label for="rate">Annual interest rate (%)</label><input id="rate" type="number" placeholder="e.g. 5.5" value="5.5" autocomplete="off" inputmode="decimal" /></div>
+<div class="field"><label for="years">Loan term (years)</label><input id="years" type="number" placeholder="e.g. 30" value="30" autocomplete="off" inputmode="decimal" /></div>
+<div class="actions">
+<button class="btn" id="runBtn" type="button">Run</button>
+<button class="btn secondary" id="clearBtn" type="button">Clear</button>
+</div>
+<div class="result" id="result" aria-live="polite">Result will appear here.</div>
+</div>
+<h2>How to read the result</h2>
+<p>Equal payment keeps your monthly payment the same across the
+loan term; equal principal keeps the principal portion the same
+and front-loads the interest. Use this calculator before you
+sign a mortgage to see which schedule costs less in total.</p>
+<h2>Frequently asked questions</h2>
+<p><strong>Which is cheaper?</strong> Equal principal usually
+costs less in total interest because you pay down the principal
+faster.</p>
+<p><strong>Can I switch mid-term?</strong> Most lenders allow
+extra principal payments at any time, which mimics the equal
+principal effect without changing your contract.</p>
+
+<footer class="site">
+  <div>© 2026 Tool Station. Built with the auto money agent.</div>
+  <div>
+    <a href="/about.html">About</a> ·
+    <a href="/privacy.html">Privacy</a> ·
+    <a href="/contact.html">Contact</a>
+  </div>
+</footer>
+</main>
+</body>
+</html>
+
+<script>
+(function() {
+  const byId = id => document.getElementById(id);
+  const fmt = (n, d) => Number(n).toLocaleString('en-US', { minimumFractionDigits: d || 2, maximumFractionDigits: d || 2 });
+  function go() {
+    try {
+      
+    const principal = parseFloat(byId('principal').value);
+    const rate = parseFloat(byId('rate').value) / 100 / 12;
+    const months = parseInt(byId('years').value) * 12;
+    if (!(principal > 0) || !(rate > 0) || !(months > 0)) {
+      throw new Error('Please fill principal, rate and years with positive numbers.');
+    }
+    const equal_payment = principal * (rate * Math.pow(1+rate, months)) / (Math.pow(1+rate, months) - 1);
+    const equal_principal = principal / months + principal * rate;
+    const total_equal_payment = equal_payment * months;
+    const total_equal_principal = (principal / months) * months * (months + 1) / 2 * rate + principal;
+    const interest_diff = total_equal_payment - total_equal_principal;
+    
+        out = 'Equal payment monthly: $' + fmt(equal_payment) +
+              '\nEqual principal month 1: $' + fmt(equal_principal) +
+              '\nTotal interest (equal payment): $' + fmt(total_equal_payment - principal) +
+              '\nTotal interest (equal principal): $' + fmt(total_equal_principal - principal) +
+              '\nInterest saved with equal principal: $' + fmt(interest_diff);
+        
+
+      const out = byId('result');
+      out.textContent = out;
+    } catch (e) {
+      byId('result').textContent = 'Error: ' + e.message;
+    }
+  }
+  byId('runBtn').addEventListener('click', go);
+})();
+</script>
